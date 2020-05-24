@@ -4,10 +4,10 @@ import { LoginComponent } from "./login/login.component";
 
 const routes: Routes = [
   { path: "", component: LoginComponent },
-  { path: "user-registro", loadChildren: "./user/user.module#UserModule" },
+  { path: "user-registro", loadChildren: () => import('./user/user.module').then(m => m.UserModule) },
   {
     path: "principal",
-    loadChildren: "./principal/principal.module#PrincipalModule",
+    loadChildren: () => import('./principal/principal.module').then(m => m.PrincipalModule),
   },
 ];
 
