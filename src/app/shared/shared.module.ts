@@ -1,0 +1,34 @@
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+
+// Material
+import { MatDividerModule } from "@angular/material/divider";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
+import { MatButtonModule } from "@angular/material/button";
+import { MatMenuModule } from "@angular/material/menu";
+import { MatListModule } from "@angular/material/list";
+// Componentes
+import { HeaderComponent } from "./components/header/header.component";
+import { SidebarComponent } from "./components/sidebar/sidebar.component";
+import { FooterComponent } from "./components/footer/footer.component";
+//
+import { NgScrollbarModule } from "ngx-scrollbar";
+
+@NgModule({
+  declarations: [HeaderComponent, SidebarComponent, FooterComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    NgScrollbarModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatListModule,
+  ],
+  exports: [HeaderComponent, SidebarComponent, FooterComponent],
+})
+export class SharedModule {}
